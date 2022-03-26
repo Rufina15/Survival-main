@@ -1,0 +1,373 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block index %}
+
+<svg display="none">
+  <symbol id="pictures">
+  <g fill="#1C2B37" fill-rule="evenodd">
+  <path d="M29.8 19.4a6 6 0 01-.6 2c-.4.8-.7 1.1-1 1.3h-.5l-.5-.2a1 1 0 00-1.1.1c-.7.7-1.5 1.2-2.4 1.6a1 1 0 00-.6 1l.2 1.8-2.3.5-.8-2a1 1 0 00-1.4-.4c-1.8 1-3.9 1.2-6 .6a1 1 0 00-1.1.4l-1 1.4-2.2-1 .6-2.1c0-.4 0-.7-.3-1a8.5 8.5 0 011.8-13.2l1.5.2c1.4 0 2.6-.5 3.5-1.3 1.3 0 2.5.4 3.7 1.1.2.1.4.2.6.1a7.2 7.2 0 013.6.4h.9c.4-.4 1.6-1.2 2.3-1l-.2.6-.5 1.3c-.1.3 0 .7.2 1a7.2 7.2 0 012 4.5c0 .4.2.7.5.8a23.6 23.6 0 011 .7s.2.3.1.8M8 5.2a4.2 4.2 0 018.4 0c0 .7-.2 1.3-.4 1.9a4.2 4.2 0 01-3.5 2.3h-.3c-1 0-1.8-.3-2.6-.9-1-.7-1.6-2-1.6-3.3M2.6 18.3c-.3 0-.4-.2-.5-.3-.4-.3-.5-.8-.4-1.1.1-.2.3-.3.6-.3h.1c.5 0 .6.4.6.7 0 .3-.2.7-.4 1m28-1.5l-.4-.2v-.1c-.3-1.8-1-3.5-2.1-4.9l.2-.5c.3-.7.7-1.4.4-2.2-.2-.4-.5-.8-1-1-1.4-.6-2.8 0-4 .8a9.2 9.2 0 00-3.7-.4c-1-.5-2-.9-3-1l.3-2A5.2 5.2 0 007 5.2c0 1.5.7 2.8 1.8 3.8a10.5 10.5 0 00-4.2 9.2 4 4 0 01-.8.2l.3-1.2c0-1-.6-1.7-1.5-1.7-.8-.1-1.4.2-1.7.9-.3.7 0 1.7.6 2.3l.3.2a3 3 0 01-1.2.3.5.5 0 000 1c1 0 1.8-.4 2.4-.9.4.1 1 0 1.7-.1.3 1.9 1.1 3.6 2.4 5l-.6 2.5c-.2.5 0 1 .5 1.2l3.8 1.7h.4c.3 0 .7 0 .8-.4l1-1.5c2 .4 4 .2 5.8-.5l.7 1.8c.2.4.7.7 1.2.6l4-1c.4 0 .8-.5.7-1l-.1-2 1.7-1.1c.9.3 1.8.2 2.5-.3.6-.4 1.1-1 1.6-2 .4-.9.7-1.9.8-2.7.2-1.8-.7-2.6-1.2-2.8"/>
+  <path d="M18.3 11.7a6.6 6.6 0 00-6.4 0 .5.5 0 10.5.8c1.6-.9 3.8-.9 5.4 0l.3.1a.5.5 0 00.2-1M25 15a1.2 1.2 0 100 2.5 1.2 1.2 0 000-2.4"/>
+  </g>
+  </symbol>
+
+  <symbol id="pictures2">
+    <defs><path id="a" d="M0 9.5V19h6V0H0v9.5z"/><path id="c" d="M6 19H0V0h6v19z"/><path id="e" d="M6 9.5V19H0V0h6v9.5z"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(0 .5)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path d="M3 5.5a1 1 0 110-2 1 1 0 010 2m1-3.9V1a1 1 0 10-2 0v.6a3 3 0 00-2 2.9 3 3 0 002 2.8V18a1 1 0 002 0V7.3a3 3 0 002-2.8 3 3 0 00-2-2.9" fill="#1C2B37" mask="url(#b)"/></g><g transform="translate(7 .5)"><mask id="d" fill="#fff"><use xlink:href="#c"/></mask><path d="M3 15.5a1 1 0 110-2 1 1 0 010 2m1-3.9V1a1 1 0 10-2 0v10.6a3 3 0 00-2 2.9 3 3 0 002 2.8v.7a1 1 0 002 0v-.7a3 3 0 002-2.8 3 3 0 00-2-2.9" fill="#1C2B37" mask="url(#d)"/></g><g transform="translate(14 .5)"><mask id="f" fill="#fff"><use xlink:href="#e"/></mask><path d="M3 9.5a1 1 0 110-2 1 1 0 010 2m1-3.9V1a1 1 0 10-2 0v4.6a3 3 0 00-2 2.9 3 3 0 002 2.8V18a1 1 0 002 0v-6.7a3 3 0 002-2.8 3 3 0 00-2-2.9" fill="#1C2B37" mask="url(#f)"/></g></g>
+  </symbol>
+
+  <symbol id="pictures3">
+    <g>
+      <path d="M2.8 4.6zm0 .2c-.8 3.3-.6 6.6.6 9.6s3.4 5.6 6.3 7.4c1.4-.2 3-.6 3.9-1l-3-3.4-2 .8-.4-.2c-2.9-1.4-5-6.5-3.8-9.5l.1-.4 2-.8-.2-4.5c-1 .4-2.4 1-3.5 2zm6.8 19c-.3 0-.6-.1-.8-.3-3.3-2-5.8-5-7.2-8.3a17.7 17.7 0 01-.7-11c.1-.4.3-.7.6-.9 1.4-1 3.2-2 4.4-2.5.5-.2 1-.2 1.5.1.5.3.7.7.7 1.2l.3 5.1C8.5 8 8 8.7 7.3 9L6 9.5c-.5 2 1 5.4 2.6 6.6l1.2-.5c.8-.3 1.6-.1 2.1.5l3.4 3.9c.3.4.4.8.3 1.3-.1.5-.5 1-1 1.2a21.7 21.7 0 01-5.1 1.3zm5.8-6v-4a4 4 0 01-3-3.7V3.9a4 4 0 014-3.9h10.5a4 4 0 014 4v6a4 4 0 01-4 4h-5.2l-6.3 3.9zm1-15.9a2 2 0 00-2 2v6.2c0 1 .8 2 2 2h.9v2.4l3.9-2.4h5.7a2 2 0 002-2V3.9a2 2 0 00-2-2H16.4z" fill="#1C2B37" fill-rule="evenodd"/>
+    </g>
+  </symbol>
+
+  <symbol id="pictures4">
+    <defs><path id="a" d="M0 5a5 5 0 015-5h11a5 5 0 015 5v5a5 5 0 01-5 5h-3.5L5 18.7 5 15a5 5 0 01-5-5V5z"/><mask id="b" width="21" height="18.656" x="0" y="0" fill="#fff"><use xlink:href="#a"/></mask></defs><g fill="none" fill-rule="evenodd"><use stroke="#1D2C37" stroke-width="4" mask="url(#b)" xlink:href="#a"/><path fill="#1D2C37" d="M9.3 7.5a1.2 1.2 0 112.4 0 1.2 1.2 0 11-2.4 0zm-4 0a1.2 1.2 0 112.4 0 1.2 1.2 0 11-2.4 0zm8 0a1.2 1.2 0 112.4 0 1.2 1.2 0 11-2.4 0z"/></g>
+
+  </symbol>
+
+
+</svg>
+
+
+<section class="home" id="home">
+    <div class="head_container">
+      <div class="box">
+        <div class="text">
+          <h1>Royal Grand Hotel</h1>
+          <h2>Luxury vacation with the Royal hotel chain</h2>
+<button onclick="document.location='{% url 'add_booking' %}'">BOOK NOW</button>
+        </div>
+      </div>
+      <div class="image">
+        <img src="{% static 'booking/img/6ed6569f864f15a4dcf5cfe105010494.jpg' %}" class="slide">
+      </div>
+      <div class="image_item">
+        <img src="static/booking/img/1213_2591_photo_408826058.jpg" alt="" class="slide active" onclick="img('static/booking/img/1213_2591_photo_408826058.jpg')">
+        <img src="static/booking/img/85263c330d124fac932ed1787b22ffab.jpg" alt="" class="slide" onclick="img('static/booking/img/85263c330d124fac932ed1787b22ffab.jpg')">
+        <img src="static/booking/img/9504f12aac7e9e08e91b74ac2322b6f8.jpg" alt="" class="slide" onclick="img('static/booking/img/9504f12aac7e9e08e91b74ac2322b6f8.jpg')">
+        <img src="static/booking/img/9bb251_6b842b65d1ad4ee7a61ca4fb4b171757_mv2_d_5760_3840_s_4_2.jpeg" alt="" class="slide" onclick="img('static/booking/img/9bb251_6b842b65d1ad4ee7a61ca4fb4b171757_mv2_d_5760_3840_s_4_2.jpeg')">
+      </div>
+    </div>
+  </section>
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.img');
+      line.style.background = change;
+    }
+  </script>
+  <section class="book">
+    <div class="container flex">
+      <div class="input grid">
+        <div class="box">
+          <label>Check-in:</label>
+          <input type="date" placeholder="Check-in-Date">
+        </div>
+        <div class="box">
+          <label>Check-out:</label>
+          <input type="date" placeholder="Check-out-Date">
+        </div>
+        <div class="box">
+          <label>Adults:</label> <br>
+          <input type="number" placeholder="0">
+        </div>
+        <div class="box">
+          <label>Children:</label> <br>
+          <input type="number" placeholder="0">
+        </div>
+      </div>
+      <div class="search">
+        <input type="submit" value="SEARCH">
+      </div>
+    </div>
+  </section>
+  <section class="about top" id="about">
+    <div class="container flex">
+      <div class="left">
+        <div class="img">
+          <img src="{% static 'booking/img/a1.jpg'%}" alt="" class="image1">
+          <img src="{% static 'booking/img/a2.jpg'%}" alt="" class="image2">
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="right">
+        <div class="heading">
+          <h5>RAISING COMFOMRT TO THE HIGHEST LEVEL</h5>
+          <h2>Welcome to Royal Hotel</h2>
+          <p>Be a guest of our cozy hotel and spend a wonderful holiday here </p>
+          <p>There is an elegant dining room, as well as a seasonal open grill restaurant. Other amenities include an elegant spa, as well as a gym, swimming pool and meeting areas.</p>
+          <button class="btn1">READ MORE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper top">
+    <div class="container">
+      <div class="text">
+        <h2 class="soz">Our Amenities</h2>
+        <p>Luxe rooms with traditional decor provide flat-screens and Wi-Fi access .All have balconies; and room service is available 24/7.  </p>
+
+        <div class="content">
+          <div class="box flex">
+            <i class="fas fa-swimming-pool"></i>
+            <span>Swimming pool</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-dumbbell"></i>
+            <span>Gym & yogo</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-spa"></i>
+            <span>Spa & massage</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-ship"></i>
+            <span>Restaurant</span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="kateg">
+    <div class="col-min-4">
+            <div class="list-group">
+              {% for item in categories %}
+              <a href="/category/{{item.pk}}" class="list-group-item list-group-item-action">{{item.title}}</a>
+              {% endfor %}
+            </div>
+
+
+      </div>
+      </div>
+  </section>
+<section class="room top" id="room">
+  <div class="container">
+    <div class="heading_top flex1">
+      <div class="heading">
+        <h5>RAISING COMFORT TO THE HIGHEST LEVEL</h5>
+        <h2>Rooms $ Suites</h2>
+      </div>
+
+    </div>
+
+    <div class="content grid">
+
+      {% for item in menu%}
+      <div class="box">
+        <div class="img">
+          <img src="{{ item.img.url }}" alt="">
+        </div>
+        <div class="text">
+          <h3>{{ item.title }}</h3>
+
+          <div class="container">
+            <div class="row products">
+              <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ item.subtitle }}</h5>
+                    <p class="p">{{ item.decs }}</p>
+                    <a href="#" class="btn btn-primary">{{ item.price }} тг</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor%}
+
+<!--      <div class="box">-->
+<!--        <div class="img">-->
+<!--          <img src="{% static 'booking/img/r2.jpg'%}" alt="">-->
+<!--        </div>-->
+<!--        <div class="text">-->
+<!--          <h3>ECONOMICAL ROOMS</h3>-->
+<!--          <p> <span></span> <span></span> </p>-->
+<!--          <div class="container">-->
+
+
+
+
+
+<!--            <div class="row products">-->
+<!--              {% for item in menu%}-->
+<!--              <div class="col-3">-->
+<!--                <div class="card" style="width: 18rem;">-->
+<!--                  <div class="card-body">-->
+<!--                    <h5 class="card-title">{{ item.title }}</h5>-->
+<!--                    <p class="p">{{ item.decs }}</p>-->
+<!--                    <a href="#" class="btn btn-primary">{{ item.price }} тг</a>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              {% endfor %}-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="box">-->
+<!--        <div class="img">-->
+<!--          <img src="{% static 'booking/img/r3.jpg'%}" alt="">-->
+<!--        </div>-->
+<!--        <div class="text">-->
+<!--          <h3>VIP ROOMS</h3>-->
+<!--          <div class="row products">-->
+<!--            {% for item in menu%}-->
+<!--            <div class="row row-col-3">-->
+<!--              <div class="card" style="width: 18rem;">-->
+<!--                <div class="card-body">-->
+<!--                  <h5 class="card-title">{{ item.title }}</h5>-->
+<!--                  <p class="p">{{ item.decs }}</p>-->
+<!--                  <a href="#" class="btn btn-primary">{{ item.price }} тг</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            {% endfor %}-->
+<!--          </div>-->
+<!--        </div>-->
+
+
+<!--      </div>-->
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="gallary mtop " id="gallary">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>WELCOME TO OUR PHOTO GALLERY</h5>
+          <h2>Photo Gallery of Our Hotel</h2>
+        </div>
+      </div>
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="{% static 'booking/img/g1.jpg' %}" alt="">
+        </div>
+        <div class="item">
+          <img src="{% static 'booking/img/g2.jpg' %}" alt="">
+        </div>
+        <div class="item">
+          <img src="{% static 'booking/img/g3.jpg' %}" alt="">
+        </div>
+        <div class="item">
+          <img src="{% static 'booking/img/g4.jpg' %}" alt="">
+        </div>
+        <div class="item">
+          <img src="{% static 'booking/img/g5.jpg' %}" alt="">
+        </div>
+        <div class="item">
+          <img src="{% static 'booking/img/g6.jpg' %}" alt=""> alt="">
+        </div>
+        <div class="item">
+          <img src="{% static 'booking/img/g7.jpg' %}" alt=""> alt="">
+        </div>
+        <div class="item">
+          <img src="{% static 'booking/img/g8.jpg' %}" alt=""> alt="">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  </script>
+
+<div class="container grid top">
+      <div class="box">
+        <div style="display: flex; align-items: center;">
+           <svg width="32" height="28">
+            <use xlink:href="#pictures"></use>
+          </svg>
+        <a href="#"><h3 style="color:#000000">Low Prices</h3></a>
+
+        </div>
+        <p>We work directly with thousands of hotels, dozens of suppliers and control room prices. Therefore, we always have great deals on popular destinations.</p>
+        <div class="payment grid">
+
+        </div>
+      </div>
+
+      <div class="box">
+
+        <div style="display: flex; align-items: center;">
+           <svg width="32" height="28">
+            <use xlink:href="#pictures2"></use>
+          </svg>
+          <a href="#"><h3 style="color:#000000">Flexible payment</h3></a>
+
+        </div>
+        <ul>
+          <li>You choose the payment method yourself. You can pay for the reservation immediately - we use most bank cards. You can fly at the hotel upon arrival.</li>
+
+        </ul>
+      </div>
+
+      <div class="box">
+        <div style="display: flex; align-items: center;">
+           <svg width="32" height="28">
+            <use xlink:href="#pictures3"></use>
+          </svg>
+          <a href="#"><h3 style="color:#000000">Caring support 24/7</h3></a>
+
+        </div>
+        <ul>
+          <li>Support operators will help with hotel selection and booking. If the question arose during the trip, the operator will be in touch and will find a solution as soon as possible.</li>
+
+        </ul>
+      </div>
+
+      <div class="box">
+        <div style="display: flex; align-items: center;">
+           <svg width="32" height="28">
+            <use width="32" height="28" xlink:href="#pictures4"></use>
+          </svg>
+          <a href="#"><h3 style="color:#000000">Reliable reviews</h3></a>
+
+        </div>
+
+        <ul>
+          <li>We collect and publish traveler reviews and add TripAdvisor reviews. So you get even more information about the hotel.</li>
+
+        </ul>
+      </div>
+    </div>
+
+  <section class="map top">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d180798.4777267955!2d76.8231656133918!3d43.214643421908235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e7d16c5cbab%3A0x3d44668fad986d76!2z0JDQu9C80LDRgtGL!5e0!3m2!1sru!2skz!4v1647956040183!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,723 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block index %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 90%;
+  margin: auto;
+}
+.flex {
+  display: flex;
+}
+.flex1 {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width:768px) {
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+}
+
+.home {
+  background-image: url("{% static 'booking/img/hotelll.jpeg' %}");
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 150px;
+  color: rgba(255, 255, 255, 0.726);
+  padding-top: 10%;
+}
+
+.home p {
+  color: rgba(0, 0, 0, 0.466);
+  font-size: 50px;
+}
+
+.home .content {
+  text-align: left;
+  color: black;
+  margin-top: 7%;
+}
+
+.home .box {
+  background: white;
+  padding: 35px;
+}
+
+.home input {
+  margin-top: 10px;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  background: #CC8C18;
+  color: white;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+}
+
+button i {
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+
+/*------------home------------*/
+/*------------about------------*/
+.top {
+  margin-top: 80px;
+}
+
+.mtop {
+  margin-top: 40px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.heading h5 {
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: #CC8C18;
+  padding-top: 20px;
+}
+
+.heading h2 {
+  color: #24416B;
+  font-size: 45px;
+  font-family: serif;
+  font-weight: bold;
+  margin: 10px 0 20px 0;
+}
+
+.left, .right {
+  width: 50%;
+}
+
+h3 {
+  font-size: 35px;
+  font-family: serif;
+  color: #24416B;
+  margin-bottom: 20px;
+}
+
+.about .left {
+  padding: 20px;
+}
+
+p {
+  line-height: 30px;
+  color: #a4a4a4;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.about {
+  position: relative;
+  padding-bottom: 70px;
+}
+
+.about .right {
+  position: relative;
+}
+
+.about .right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: hsla(39, 93%, 57%, 0.74);
+  width: 92%;
+  height: 61vh;
+  z-index: -1;
+  margin: 50px;
+}
+
+.about::after {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: 0;
+  background-image: url("{% static 'booking/img/line1.png' %}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 100%;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  bottom: -5%;
+  left: 0;
+  background-image:url("{% static 'booking/img/line2.png' %}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 100%;
+}
+
+/*------------about------------*/
+.wrapper .container {
+  max-width: 50%;
+  margin: auto;
+}
+
+/*------------room------------*/
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.room img {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.room h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/*------------room------------*/
+/*------------timer------------*/
+.timer {
+  position: relative;
+  text-align: center;
+  padding-top: 12%;
+}
+
+.background::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  content: '';
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+}
+
+.timer.wrapper {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("{% static 'booking/img/XXL.jpeg' %}");
+}
+
+.timer.about::after {
+  z-index: 1;
+  top: 0%;
+  background-image: url("{% static 'booking/img/line2.png' %}");
+}
+
+.timer.about::before {
+  z-index: 1;
+  bottom: 0%;
+  background-image: url("{% static 'booking/img/line1.png' %}");
+}
+
+.timer h2,
+.timer h5 {
+  color: white;
+  text-align: center;
+}
+
+.timer .container {
+  position: relative;
+}
+
+.timer h2 span {
+  font-family: 'Great Vibes', cursive;
+}
+
+.clock span {
+  color: white;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.clock p {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+/*------------timer------------*/
+/*------------offer------------*/
+.offer img {
+  width: 100%;
+  height: 100%;
+}
+
+.offer .right {
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
+}
+
+.offer .content h4 {
+  font-size: 20px;
+  color: #627795;
+  font-family: serif;
+}
+
+.offer .rate i {
+  font-size: 13px;
+  color: #CC8C18;
+  margin: 10px 10px 20px 0;
+}
+
+.offer .content h5 {
+  color: #627795;
+  margin-bottom: 10px;
+}
+
+.offer .box {
+  transition: 0.5s;
+}
+
+.offer .box:hover {
+  transform: translateY(-10px);
+}
+
+/*------------offer------------*/
+
+@media only screen and (max-width:768px) {
+
+  /*------------home------------*/
+  footer .grid,
+  .blog .grid,
+  .offer2 .grid,
+  .wrapper2 .content,
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home h1 {
+    font-size: 100px;
+  }
+
+  .home {
+    height: 80vh;
+  }
+
+  .home .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 15px;
+  }
+
+  .home .box:nth-last-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+  }
+
+  /*------------home------------*/
+  /*------------about------------*/
+  .left, .right {
+    width: 100%;
+  }
+
+  .area .content,
+  .room .content,
+  .about .content {
+    flex-direction: column;
+  }
+
+  .wrapper2::after,
+  .area .left::after,
+  .timer.about::before,
+  .timer.about::after,
+  .about .right::after,
+  .about::before,
+  .about::after {
+    display: none;
+  }
+  /*------------timer------------*/
+  .timer.wrapper {
+    height: 50vh;
+  }
+  /*------------offer------------*/
+  .offer .box {
+    flex-direction: column;
+  }
+
+  .offer .right {
+    margin: 0px;
+  }
+
+@media only screen and (max-width:512px) {
+
+  .home h1 {
+    font-size: 70px;
+  }
+
+  .grid2,
+  footer .grid,
+  .blog .grid,
+  .offer2 .grid,
+  .wrapper2 .content,
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .home {
+    height: 140vh;
+  }
+
+  .home .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, auto);
+    grid-gap: 15px;
+  }
+
+  .home .box:nth-last-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 5;
+    grid-row-end: 5;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+  </style>
+</head>
+
+<body>
+<section class="home" id="home">
+    <div class="container">
+      <h1>OUR ROOMS</h1>
+      <p>ROYAL HOTEL</p>
+
+
+      <div class="s131">
+      <form>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <input id="search" type="text" placeholder="What are you looking for?" />
+          </div>
+          <div class="input-field second-wrap">
+            <div class="input-select">
+              <select data-trigger="" name="choices-single-defaul">
+                <option placeholder="">Сhoose CATEGORY</option>
+                <option>Стандарт</option>
+                <option>Эконом</option>
+                <option>ВИП</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="button">SEARCH</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="js/extention/choices.js"></script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false
+      });
+
+    </script>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="heading">
+        <h5>EXPLORE</h5>
+        <h2>We are cool to give you pleasure
+        </h2>
+      </div>
+
+      <div class="content flex  top">
+        <div class="left">
+          <h3>As much as comfort want to get from us everything
+          </h3>
+          <p> The most comfortable location, refined and heart-pleasing interior of the old imperial centuries. Professional recruitment, unobtrusive service and excellent treatment will be waiting for you. Everything is clean, comfortable and tastefully done. Nice design, new furniture, snow-white fluffy towels. You will be pleasantly surprised by the free Wi-Fi with good speed and the availability of parking. You will also enjoy spa salons, delicious food at our fine restaurant. </p>
+          <p> We assure you that you will have a magical time at our hotel! </p>
+        </div>
+        <div class="right">
+
+          <img src="{% static 'booking/img/Four-Seasons-Hotel-Macao-Lobby-Ken-Seet-5abd8edd04d1cf0037616ed0.jpg' %}" alt="" width="500px">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='far fa-long-arrow-alt-left'></i>", "<i class='far fa-long-arrow-alt-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
+
+  <section class="timer about wrapper">
+    <div class="background"> </div>
+    <div class="container">
+      <div class="heading">
+        <h5>LAST MINUTE!</h5>
+        <h2>Before the end of the promotion</h2>
+      </div>
+
+      <div id="time" class="flex1 mtop"> </div>
+    </div>
+  </section>
+  <script src="js/jquery.countdown.js" charset="utf-8"></script>
+  <script src="js/jquery.countdown.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $('#time').countdown('2024/01/01', function(event) {
+      $(this).html(event.strftime(
+        '<div class="clock"><span>%d</span> <p>Days</p></div> ' +
+        '<div class="clock"><span>%H</span> <p>Hours</p></div> ' +
+        '<div class="clock"><span>%M</span> <p>Minutes</p></div> ' +
+        '<div class="clock"><span>%S</span> <p>Seconds</p></div> '
+      ));
+    });
+  </script>
+
+
+  <section class="offer mtop" id="services">
+    <div class="container">
+      <div class="heading">
+        <h5>EXCLUSIVE OFFERS </h5>
+        <h3>You can get an exclusive offer </h3>
+      </div>
+
+      <div class="content grid2 mtop">
+        <div class="box flex">
+          <div class="left">
+            <img src="{% static 'booking/img/o1.jpg' %}" alt="">
+          </div>
+          <div class="right">
+            <h4>Deluxe Room</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>From $50.6/night</h5>
+          <button onclick="document.location='{% url 'add_booking' %}'">BOOK NOW</button>
+
+              <i class="fas fa-arrow-circle-right"></i>
+
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="left">
+
+            <img src="{% static 'booking/img/o2.jpg' %}" alt="">
+          </div>
+          <div class="right">
+            <h4>Deluxe Room</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>From $50.6/night</h5>
+                      <button onclick="document.location='{% url 'add_booking' %}'">BOOK NOW</button>
+              <i class="fas fa-arrow-circle-right"></i>
+
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="left">
+
+            <img src="{% static 'booking/img/o3.jpg' %}" alt="">
+          </div>
+          <div class="right">
+            <h4>Deluxe Room</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>From $50.6/night</h5>
+                      <button onclick="document.location='{% url 'add_booking' %}'">BOOK NOW</button>
+
+              <span>Check Availability</span>
+              <i class="fas fa-arrow-circle-right"></i>
+
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="left">
+            <img src="{% static 'booking/img/o4.jpg' %}" alt="">
+          </div>
+          <div class="right">
+            <h4>Deluxe Room</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>From $50.6/night</h5>
+                      <button onclick="document.location='{% url 'add_booking' %}'">BOOK NOW</button>
+              <i class="fas fa-arrow-circle-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="gallary top" id="gallary">
+    <div class="owl-carousel owl-theme">
+      <div class="item">
+        <img src="{% static 'booking/img/g1.jpg' %}" alt="">
+        <div class="overlay">
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="item">
+        <img src="{% static 'booking/img/g2.jpg' %}" alt="">
+        <div class="overlay">
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="item">
+        <img src="{% static 'booking/img/g3.jpg' %}" alt="">
+        <div class="overlay">
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="item">
+        <img src="{% static 'booking/img/g4.jpg' %}" alt="">
+        <div class="overlay">
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="item">
+        <img src="{% static 'booking/img/g5.jpg' %}" alt="">
+        <div class="overlay">
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="item">
+        <img src="{% static 'booking/img/g1.jpg' %}" alt="">
+        <div class="overlay">
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="item">
+        <img src="{% static 'booking/img/g2.jpg' %}" alt="">
+        <div class="overlay">
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="item">
+        <img src="{% static 'booking/img/g3.jpg' %}" alt="">
+        <div class="overlay">
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      slideTransition: 'linear',
+      autoplayTimeout: 4000,
+      autoplaySpeed: 4000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+  </script>
+</body>
+</html>
+
+{% endblock %}
